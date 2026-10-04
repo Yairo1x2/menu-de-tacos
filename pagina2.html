@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedido en Línea | Tacos Don Omar</title>
+  <style>
+    :root {
+      --bg: #fffaf4;
+      --panel: #ffffff;
+      --primary: #c4471b;
+      --primary-dark: #8e2f12;
+      --text: #2d2a2a;
+      --muted: #645d5b;
+      --line: #f2d9c7;
+      --shadow: rgba(103, 45, 18, 0.18);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #fff9f3 0%, #ffe9d2 100%);
+      color: var(--text);
+    }
+    a { text-decoration: none; }
+    .container { width: min(1100px, calc(100% - 24px)); margin: 0 auto; }
+    .topbar {
+      background: #2b1b18; color: white; padding: 14px 0; font-size: 0.92rem;
+    }
+    .topbar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .brand { font-weight: bold; letter-spacing: 1px; }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav a { color: #fbe6d8; }
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white; padding: 64px 0;
+    }
+    .hero h1 { margin: 0; font-size: clamp(2.3rem, 5vw, 4rem); }
+    .hero p { margin: 12px 0 0; opacity: 0.95; }
+    main { padding: 42px 0 60px; }
+    .grid {
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px;
+      align-items: start;
+    }
+    .card {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 22px;
+      box-shadow: 0 10px 30px var(--shadow); padding: 24px;
+    }
+    h2 { margin-top: 0; color: var(--primary-dark); }
+    label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--primary-dark); }
+    input, select, textarea, button {
+      width: 100%; padding: 12px 14px; border: 1px solid #ebd0b8; border-radius: 12px; font: inherit;
+      margin-bottom: 16px;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .total {
+      background: #fff5ea; border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin-top: 12px;
+    }
+    .total strong { font-size: 1.5rem; color: var(--primary-dark); }
+    .btn {
+      background: var(--primary); color: white; border: none; font-weight: bold; cursor: pointer;
+    }
+    footer {
+      background: #261a1a; color: #f8ece7; text-align: center; padding: 18px 12px;
+    }
+    @media (max-width: 760px) {
+      .grid, .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">TACOS DON OMAR</div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index2.html">Menú</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="promociones.html">Promociones</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="pagina2.html">Pedido</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Pedido en línea</h1>
+      <p>Haz tu pedido y disfruta una experiencia rápida, fácil y deliciosa.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container grid">
+      <div class="card">
+        <h2>Completa tu pedido</h2>
+        <div class="row">
+          <div>
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" />
+          </div>
+          <div>
+            <label>Teléfono</label>
+            <input type="tel" placeholder="Ej. 5512345678" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>Producto</label>
+            <select>
+              <option>Tacos al Pastor</option>
+              <option>Tacos de Suadero</option>
+              <option>Gringa de Pastor</option>
+              <option>Quesadilla con Carne</option>
+            </select>
+          </div>
+          <div>
+            <label>Cantidad</label>
+            <input type="number" value="1" min="1" />
+          </div>
+        </div>
+
+        <label>Agregar bebida</label>
+        <select>
+          <option>Sin bebida</option>
+          <option>Horchata</option>
+          <option>Jamaica</option>
+          <option>Limón</option>
+        </select>
+
+        <label>Notas</label>
+        <textarea placeholder="Ej. Sin cebolla, salsa aparte..."></textarea>
+
+        <button class="btn">Enviar pedido</button>
+      </div>
+
+      <div class="card">
+        <h2>Resumen</h2>
+        <div class="total">
+          <p>Pedido estimado</p>
+          <strong>$180.00 MXN</strong>
+        </div>
+        <p style="color: var(--muted); line-height: 1.8; margin-top: 18px;">
+          Incluye tacos, salsa y atención personalizada. Puedes recoger tu pedido en el local o pedirlo por WhatsApp.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2026 Tacos Don Omar</footer>
+</body>
+</html>
