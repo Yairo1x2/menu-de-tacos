@@ -19,8 +19,6 @@
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -28,610 +26,117 @@
       color: var(--text);
     }
 
-    a { text-decoration: none; }
+    .design-a {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 16px 60px;
+    }
 
-    .container {
-      width: min(1100px, calc(100% - 24px));
+    .design-a .container {
+      width: min(1100px, 100%);
       margin: 0 auto;
     }
 
-    .topbar {
-      background: #2b1b18;
-      color: white;
-      padding: 14px 0;
-      font-size: 0.92rem;
-    }
-
-    .topbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      font-weight: bold;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
-    }
-
-    .nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .nav a {
-      color: #fbe6d8;
-      transition: opacity 0.2s ease;
-    }
-
-    .nav a:hover { opacity: 0.8; }
-
-    .hero {
+    .design-a .header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: white;
-      padding: 72px 0 58px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at right bottom, rgba(255,255,255,0.2), transparent 38%);
-    }
-
-    .hero .container {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(2.4rem, 6vw, 4.4rem);
-      line-height: 1;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin: 18px 0 0;
-      opacity: 0.96;
-    }
-
-    .hero-buttons {
-      margin-top: 24px;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: bold;
-      border: none;
-      transition: transform 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-
-    .btn-primary {
-      background: #ffd77d;
-      color: #52270f;
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.14);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 24px;
-      padding: 24px;
-      backdrop-filter: blur(4px);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
-    }
-
-    .hero-card h3 {
-      margin: 0 0 18px;
-      font-size: 1.2rem;
-      letter-spacing: 0.5px;
-    }
-
-    .hero-card .info {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.18);
-      font-size: 0.98rem;
-    }
-
-    .hero-card .info:last-child { border-bottom: none; }
-
-    main {
-      padding: 40px 0 60px;
-    }
-
-    .section {
-      margin-top: 34px;
-    }
-
-    .section-title {
-      margin: 0 0 20px;
-      color: var(--primary-dark);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-    }
-
-    .intro {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      box-shadow: 0 10px 30px var(--shadow);
-      padding: 24px 26px;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 22px;
-    }
-
-    .menu-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: 0 8px 24px var(--shadow);
-    }
-
-    .menu-card h3 {
-      color: var(--primary-dark);
-      margin: 0 0 18px;
-      font-size: 1.5rem;
-    }
-
-    .item {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: center;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .item:last-child { border-bottom: none; }
-
-    .item strong {
-      display: block;
-      font-size: 1.04rem;
-      color: var(--text);
-    }
-
-    .item small {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-    }
-
-    .price {
-      font-weight: bold;
-      color: var(--primary);
-      white-space: nowrap;
-      font-size: 1.1rem;
-    }
-
-    .promo-box {
-      background: linear-gradient(135deg, #fff9ef 0%, #ffe2bf 100%);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: 0 12px 28px var(--shadow);
-    }
-
-    .promo-box ul {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--text);
-      line-height: 1.9;
-    }
-
-    .order-wrap {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .form-card,
-    .summary-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px var(--shadow);
-      padding: 24px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-weight: bold;
-      color: var(--primary-dark);
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #e5d0bc;
-      border-radius: 12px;
-      font: inherit;
-      background: #fffdfb;
-      color: var(--text);
-    }
-
-    textarea { resize: vertical; min-height: 90px; }
-
-    .radio-group,
-    .check-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      padding-top: 4px;
-    }
-
-    .radio-option,
-    .check-option {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text);
-      font-size: 0.96rem;
-    }
-
-    input[type="radio"], input[type="checkbox"] {
-      width: auto;
-      accent-color: var(--primary);
-    }
-
-    .summary-card h3 {
-      margin-top: 0;
-      color: var(--primary-dark);
-      font-size: 1.5rem;
-    }
-
-    .summary-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--text);
-    }
-
-    .summary-item strong { color: var(--primary-dark); }
-
-    .summary-total {
-      margin-top: 18px;
-      display: flex;
-      justify-content: space-between;
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: var(--primary-dark);
-    }
-
-    .contact-box {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 18px;
-    }
-
-    .contact-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 8px 20px var(--shadow);
-    }
-
-    .contact-card h4 {
-      margin: 0 0 10px;
-      color: var(--primary-dark);
-      font-size: 1.1rem;
-    }
-
-    .contact-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    footer {
-      background: #261a1a;
-      color: #f8ece7;
+      padding: 40px 20px 28px;
+      border-radius: 24px 24px 0 0;
       text-align: center;
-      padding: 18px 12px;
-      margin-top: 28px;
     }
 
-    @media (max-width: 780px) {
-      .hero .container,
-      .order-wrap,
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
+    .design-a .header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
 
-      .topbar .container {
-        justify-content: center;
-      }
+    .design-a .content {
+      background: white;
+      border: 1px solid var(--line);
+      border-top: none;
+      border-radius: 0 0 24px 24px;
+      padding: 24px;
+      box-shadow: 0 12px 28px rgba(103, 45, 18, 0.08);
+    }
 
-      .nav {
-        justify-content: center;
-      }
+    .design-a table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .design-a th,
+    .design-a td {
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 12px;
+    }
+
+    .design-a th {
+      background: #fff2e6;
+      color: var(--primary-dark);
+    }
+
+    .design-a .price {
+      color: var(--primary);
+      font-weight: bold;
+      white-space: nowrap;
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
+  <div class="design-a">
     <div class="container">
-      <div class="brand">TACOS DON OMAR</div>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="index2.html">Menú</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="promociones.html">Promociones</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="pagina2.html">Pedido</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <div>
-        <h1>El sabor que te hace volver</h1>
-        <p>Disfruta de tacos al pastor, suadero, gringas, quesadillas y bebidas frescas con sazón casero y atención de la zona escolar.</p>
-        <div class="hero-buttons">
-          <a href="#menu" class="btn btn-primary">Ver menú</a>
-          <a href="#pedido" class="btn btn-secondary">Hacer pedido</a>
-        </div>
+      <div class="header">
+        <h1>Menú y Precios Oficiales</h1>
       </div>
 
-      <div class="hero-card">
-        <h3>Horario de atención</h3>
-        <div class="info"><span>Lunes a viernes</span><strong>10:00 AM - 8:00 PM</strong></div>
-        <div class="info"><span>Especialidad</span><strong>Pastor y suadero</strong></div>
-        <div class="info"><span>Ubicación</span><strong>CECyTEM 2</strong></div>
+      <div class="content">
+        <p>Consulta nuestros productos recién preparados.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Descripción</th>
+              <th>Precio Venta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Taco al Pastor / Suadero</strong></td>
+              <td>Doble tortilla de maíz, carne sazonada, cebolla, cilantro y salsa.</td>
+              <td class="price">$16.00 MXN</td>
+            </tr>
+            <tr>
+              <td><strong>Taco de Bistec / Longaniza</strong></td>
+              <td>Carne a la plancha servida en doble tortilla de maíz.</td>
+              <td class="price">$18.00 MXN</td>
+            </tr>
+            <tr>
+              <td><strong>Gringa de Pastor</strong></td>
+              <td>Tortilla de harina grande con queso Oaxaca fundido y pastor.</td>
+              <td class="price">$35.00 MXN</td>
+            </tr>
+            <tr>
+              <td><strong>Quesadilla con Carne</strong></td>
+              <td>Tortilla de maíz con queso Oaxaca fundido y guisado a elegir.</td>
+              <td class="price">$25.00 MXN</td>
+            </tr>
+            <tr>
+              <td><strong>Agua Fresca (1 Litro)</strong></td>
+              <td>De sabor natural: Horchata, Jamaica o Limón.</td>
+              <td class="price">$22.00 MXN</td>
+            </tr>
+            <tr>
+              <td><strong>Refresco (600 ml)</strong></td>
+              <td>Bebida embotellada bien fría.</td>
+              <td class="price">$22.00 MXN</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </section>
-
-  <main>
-    <div class="container">
-      <section id="inicio" class="section">
-        <h2 class="section-title">Bienvenidos</h2>
-        <div class="intro">
-          Somos un puesto cercano a la comunidad escolar con comida mexicana recién preparada, higiene y precios accesibles. Nuestro objetivo es servir tacos sabrosos y combos rápidos para estudiantes, docentes y público en general.
-        </div>
-      </section>
-
-      <section id="menu" class="section">
-        <h2 class="section-title">Menú y precios</h2>
-        <div class="menu-grid">
-          <article class="menu-card">
-            <h3>Especialidades</h3>
-            <div class="item">
-              <div>
-                <strong>Taco al Pastor / Suadero</strong>
-                <small>Doble tortilla, cebolla, cilantro y salsa.</small>
-              </div>
-              <span class="price">$16</span>
-            </div>
-            <div class="item">
-              <div>
-                <strong>Taco de Bistec / Longaniza</strong>
-                <small>Carne a la plancha bien servida.</small>
-              </div>
-              <span class="price">$18</span>
-            </div>
-            <div class="item">
-              <div>
-                <strong>Gringa de Pastor</strong>
-                <small>Tortilla de harina con queso y pastor.</small>
-              </div>
-              <span class="price">$35</span>
-            </div>
-            <div class="item">
-              <div>
-                <strong>Quesadilla con Carne</strong>
-                <small>Queso Oaxaca fundido y guisado a elegir.</small>
-              </div>
-              <span class="price">$25</span>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <h3>Bebidas</h3>
-            <div class="item">
-              <div>
-                <strong>Agua Fresca</strong>
-                <small>Horchata, jamaica o limón.</small>
-              </div>
-              <span class="price">$22</span>
-            </div>
-            <div class="item">
-              <div>
-                <strong>Refresco 600 ml</strong>
-                <small>Bebida bien fría.</small>
-              </div>
-              <span class="price">$22</span>
-            </div>
-            <div class="item">
-              <div>
-                <strong>Michelada</strong>
-                <small>Clasica o de sabor.</small>
-              </div>
-              <span class="price">$40</span>
-            </div>
-            <div class="item">
-              <div>
-                <strong>Café</strong>
-                <small>Caliente o frío.</small>
-              </div>
-              <span class="price">$20</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="promociones" class="section">
-        <h2 class="section-title">Promociones</h2>
-        <div class="promo-box">
-          <ul>
-            <li><strong>Martes Estudiantil:</strong> 3x2 en tacos al pastor con credencial escolar vigente.</li>
-            <li><strong>Combo Sazón:</strong> 3 tacos (pastor o suadero) + agua fresca por $65.00 MXN.</li>
-            <li><strong>Fin de semana:</strong> gringa + refresco por descuento especial.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="pedido" class="section">
-        <h2 class="section-title">Simulador de pedido</h2>
-        <div class="order-wrap">
-          <div class="form-card">
-            <form>
-              <div class="form-grid">
-                <div class="field full">
-                  <label for="nombre">Nombre completo</label>
-                  <input id="nombre" type="text" placeholder="Escribe tu nombre" />
-                </div>
-
-                <div class="field">
-                  <label for="telefono">Teléfono / WhatsApp</label>
-                  <input id="telefono" type="tel" placeholder="Ej. 5587654321" />
-                </div>
-
-                <div class="field">
-                  <label>Tipo de cliente</label>
-                  <div class="radio-group">
-                    <label class="radio-option"><input type="radio" name="cliente" checked /> Estudiante</label>
-                    <label class="radio-option"><input type="radio" name="cliente" /> Docente</label>
-                    <label class="radio-option"><input type="radio" name="cliente" /> General</label>
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label for="pastor">Tacos al Pastor</label>
-                  <input id="pastor" type="number" min="0" value="0" />
-                </div>
-
-                <div class="field">
-                  <label for="suadero">Tacos de Suadero</label>
-                  <input id="suadero" type="number" min="0" value="0" />
-                </div>
-
-                <div class="field">
-                  <label for="gringas">Gringas</label>
-                  <input id="gringas" type="number" min="0" value="0" />
-                </div>
-
-                <div class="field">
-                  <label for="agua">Agua fresca</label>
-                  <select id="agua">
-                    <option value="ninguna">Sin bebida</option>
-                    <option value="horchata">Horchata</option>
-                    <option value="jamaica">Jamaica</option>
-                    <option value="limon">Limón</option>
-                  </select>
-                </div>
-
-                <div class="field full">
-                  <label>Acompañamientos</label>
-                  <div class="check-group">
-                    <label class="check-option"><input type="checkbox" checked /> Con cebolla y cilantro</label>
-                    <label class="check-option"><input type="checkbox" checked /> Con piña</label>
-                    <label class="check-option"><input type="checkbox" /> Salsa roja</label>
-                    <label class="check-option"><input type="checkbox" /> Salsa verde</label>
-                  </div>
-                </div>
-
-                <div class="field full">
-                  <label for="notas">Notas especiales</label>
-                  <textarea id="notas" placeholder="Ej. Tacos bien doraditos, salsa aparte..."></textarea>
-                </div>
-              </div>
-
-              <div class="hero-buttons" style="margin-top: 20px;">
-                <button type="submit" class="btn btn-primary">Enviar pedido</button>
-                <button type="reset" class="btn btn-secondary" style="color: var(--primary-dark);">Borrar</button>
-              </div>
-            </form>
-          </div>
-
-          <aside class="summary-card">
-            <h3>Resumen</h3>
-            <div class="summary-item"><span>Tacos al Pastor</span><strong>0</strong></div>
-            <div class="summary-item"><span>Tacos de Suadero</span><strong>0</strong></div>
-            <div class="summary-item"><span>Gringas</span><strong>0</strong></div>
-            <div class="summary-item"><span>Bebida</span><strong>Sin bebida</strong></div>
-            <div class="summary-total"><span>Total</span><span>$0.00</span></div>
-          </aside>
-        </div>
-      </section>
-
-      <section id="contacto" class="section">
-        <h2 class="section-title">Ubicación y contacto</h2>
-        <div class="contact-box">
-          <div class="contact-card">
-            <h4>Dirección</h4>
-            <p>Av. Moctezuma Manzana 025, Haciendas de Aragón, Ecatepec de Morelos, México.</p>
-          </div>
-          <div class="contact-card">
-            <h4>Referencia</h4>
-            <p>Justo afuera de la entrada principal del CECyTEM Plantel Ecatepec 2.</p>
-          </div>
-          <div class="contact-card">
-            <h4>WhatsApp</h4>
-            <p>+52 (55) 8765-4321</p>
-          </div>
-          <div class="contact-card">
-            <h4>Correo</h4>
-            <p>contacto@tacosdonomar.com.mx</p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    © 2026 Tacos Don Omar · Proyecto escolar CECyTEM Plantel Ecatepec 2
-  </footer>
+  </div>
 </body>
 </html>
