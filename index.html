@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú y Precios</title>
+    <style>
+      :root {
+        --bg: #fff8f1;
+        --card: #ffffff;
+        --primary: #a33b1d;
+        --primary-dark: #7c2c15;
+        --text: #2d2d2d;
+        --muted: #5d5d5d;
+        --line: #e9d6c4;
+        --accent: #f4c96d;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #fffaf5 0%, #fff7ef 100%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 980px;
+        margin: 40px auto;
+        padding: 24px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: 0 8px 24px rgba(85, 40, 13, 0.08);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: #fff;
+        padding: 30px 26px 20px;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        letter-spacing: 0.5px;
+      }
+
+      .header p {
+        margin: 10px 0 0;
+        font-size: 1rem;
+        opacity: 0.92;
+      }
+
+      .content {
+        padding: 26px;
+      }
+
+      .subtitle {
+        margin: 0 0 18px;
+        font-size: 1.1rem;
+        color: var(--muted);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      th, td {
+        padding: 16px 14px;
+        text-align: left;
+        border-bottom: 1px solid var(--line);
+        vertical-align: top;
+      }
+
+      th {
+        background: #f8efe7;
+        color: var(--primary-dark);
+        font-size: 0.95rem;
+        text-transform: uppercase;
+      }
+
+      tbody tr:nth-child(even) {
+        background: #fffdfb;
+      }
+
+      tbody tr:hover {
+        background: #fff4ea;
+      }
+
+      .price {
+        font-weight: bold;
+        color: var(--primary);
+        white-space: nowrap;
+      }
+
+      @media (max-width: 640px) {
+        .container { padding: 16px; }
+        .content { padding: 18px 14px; }
+        th, td { padding: 12px 10px; }
+        table, thead, tbody, th, td, tr { display: block; }
+        thead { display: none; }
+        tr {
+          border-bottom: 1px solid var(--line);
+          padding: 8px 0;
+        }
+        td {
+          border: none;
+          padding: 8px 10px;
+        }
+        td::before {
+          content: attr(data-label);
+          display: block;
+          font-weight: bold;
+          color: var(--primary-dark);
+          margin-bottom: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="header">
+          <h1>Menú y Precios Oficiales</h1>
+          <p>Consulta nuestros productos recién preparados</p>
+        </div>
+
+        <div class="content">
+          <p class="subtitle">Productos disponibles:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Precio Venta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Producto"><strong>Taco al Pastor / Suadero</strong></td>
+                <td data-label="Descripción">Doble tortilla de maíz, carne sazonada, cebolla, cilantro y salsa.</td>
+                <td data-label="Precio Venta" class="price">$16.00 MXN</td>
+              </tr>
+              <tr>
+                <td data-label="Producto"><strong>Taco de Bistec / Longaniza</strong></td>
+                <td data-label="Descripción">Carne a la plancha servida en doble tortilla de maíz.</td>
+                <td data-label="Precio Venta" class="price">$18.00 MXN</td>
+              </tr>
+              <tr>
+                <td data-label="Producto"><strong>Gringa de Pastor</strong></td>
+                <td data-label="Descripción">Tortilla de harina grande con queso Oaxaca fundido y pastor.</td>
+                <td data-label="Precio Venta" class="price">$35.00 MXN</td>
+              </tr>
+              <tr>
+                <td data-label="Producto"><strong>Quesadilla con Carne</strong></td>
+                <td data-label="Descripción">Tortilla de maíz con queso Oaxaca fundido y guisado a elegir.</td>
+                <td data-label="Precio Venta" class="price">$25.00 MXN</td>
+              </tr>
+              <tr>
+                <td data-label="Producto"><strong>Agua Fresca (1 Litro)</strong></td>
+                <td data-label="Descripción">De sabor natural: Horchata, Jamaica o Limón.</td>
+                <td data-label="Precio Venta" class="price">$22.00 MXN</td>
+              </tr>
+              <tr>
+                <td data-label="Producto"><strong>Refresco (600 ml)</strong></td>
+                <td data-label="Descripción">Bebida embotellada bien fría.</td>
+                <td data-label="Precio Venta" class="price">$22.00 MXN</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
